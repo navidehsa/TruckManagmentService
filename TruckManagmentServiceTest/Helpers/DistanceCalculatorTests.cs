@@ -31,7 +31,7 @@ namespace TruckManagmentServiceTest.Helpers
         };
 
             // Act
-            double distance = DistanceCalculator.CalculateDistance(gpsCoordinates);
+            double distance = DistanceCalculator.CalculateDistanceInKilometers(gpsCoordinates);
 
             // Assert
             Assert.Equal(793.6, Math.Round(distance, 1));

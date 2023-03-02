@@ -9,7 +9,7 @@ namespace TruckMangmentService.Helpers
     {
         private const double EarthRadius = 6371;
 
-        public static double CalculateDistance(List<GpsCoordinate> gpsCoordinates)
+        public static double CalculateDistanceInKilometers(List<GpsCoordinate> gpsCoordinates)
         {
             double distance = 0;
 

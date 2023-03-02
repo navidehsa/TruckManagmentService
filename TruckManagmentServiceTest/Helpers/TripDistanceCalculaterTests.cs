@@ -1,16 +1,15 @@
-﻿
-using TruckManagmentService.Helpers;
+﻿using TruckManagmentService.Helpers;
 using TruckMangmentService.Models;
 
 namespace TruckManagmentServiceTest.Helpers
 {
-    public class TruckPlanDistanceCalculaterTests
+    public class TripDistanceCalculaterTests
     {
         [Fact]
         public void CalculateDistanceDriven_ReturnsExpectedResult()
         {
             // Arrange
-            TruckPlan truckPlan = new TruckPlan()
+            TruckPlan trip = new TruckPlan()
             {
                 Driver = new Driver
                 {
@@ -31,7 +30,7 @@ namespace TruckManagmentServiceTest.Helpers
             };
 
             // Act
-            double distance = TruckPlanDistanceCalculater.CalculateDistanceDriven(truckPlan);
+            double distance = TripDistanceCalculater.CalculateDistanceDriven(trip);
 
             // Assert
             Assert.Equal(793.6, Math.Round(distance, 1));
