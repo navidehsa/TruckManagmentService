@@ -1,7 +1,7 @@
 ﻿namespace TruckMangmentService.Models
 {
     /// <summary>
-    ///  TruckPlan that describe a single driver driving a truck for a continuous period, such as a five-hour drive through Germany on a specific date
+    ///  TruckPlan that describe a single driver, driving a truck for a continuous period, such as a five-hour drive through Germany on a specific date
     /// </summary>
     public class TruckPlan
     {

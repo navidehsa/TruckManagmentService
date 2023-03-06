@@ -18,7 +18,7 @@ namespace TruckManagmentServiceTest.TruckServices
 
             var trips = new List<TruckPlan>
             {
-                new TruckPlan
+                new TruckPlan //age >50 & Feb2018  =>valid
                 {
                     Driver = new Driver { Birthdate = new DateTime(1968, 1, 1) },
                     StartDate = new DateTime(2018, 2, 1, 8, 0, 0),
@@ -29,7 +29,7 @@ namespace TruckManagmentServiceTest.TruckServices
                         new GpsCoordinate { Latitude = 51.0504, Longitude = 13.7373 },
                     },
                 },
-                new TruckPlan
+                new TruckPlan //age>50 & Feb2018 =>valid
                 {
                     Driver = new Driver { Birthdate = new DateTime(1950, 1, 1) },
                     StartDate = new DateTime(2018, 2, 1, 10, 0, 0),
@@ -41,7 +41,7 @@ namespace TruckManagmentServiceTest.TruckServices
                         new GpsCoordinate { Latitude = 50.9375, Longitude = 6.9603 },
                     },
                 },
-                new TruckPlan
+                new TruckPlan //age<50 & Feb2018  => notValid
                 {
                     Driver = new Driver { Birthdate = new DateTime(1983, 1, 1) },
                     StartDate = new DateTime(2018, 2, 15, 10, 0, 0),
@@ -52,7 +52,7 @@ namespace TruckManagmentServiceTest.TruckServices
                         new GpsCoordinate { Latitude = 50.9375, Longitude = 6.9603 },
                     },
                 },
-                new TruckPlan
+                new TruckPlan //age >50 & Feb2019  =>notValid
                 {
                     Driver = new Driver { Birthdate = new DateTime(1950, 1, 1) },
                     StartDate = new DateTime(2019, 2, 15, 10, 0, 0),

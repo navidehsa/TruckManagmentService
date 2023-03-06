@@ -7,8 +7,23 @@ namespace TruckMangmentService.Helpers
     /// </summary>
     public static class DistanceCalculator
     {
-        private const double EarthRadius = 6371;
+        private const double EarthRadiusInKm = 6371;
 
+        /// <summary>
+        /// Calculate the approximate distance driven for a single TruckPlan
+        /// </summary>
+        /// <param name="truckPlan"></param>
+        /// <returns>distanceInKM</returns>
+        public static double CalculateDistanceInKilometersForASingleTruckPlan(TruckPlan truckPlan)
+        {
+            return CalculateDistanceInKilometers(truckPlan.GpsCoordinates);
+        }
+
+        /// <summary>
+        /// Calculate the approximate distance driven
+        /// </summary>
+        /// <param name="gpsCoordinates"></param>
+        /// <returns>distanceInKM</returns>
         public static double CalculateDistanceInKilometers(List<GpsCoordinate> gpsCoordinates)
         {
             double distance = 0;
@@ -32,7 +47,7 @@ namespace TruckMangmentService.Helpers
 
             double c = 2 * Math.Atan2(Math.Sqrt(a), Math.Sqrt(1 - a));
 
-            return EarthRadius * c;
+            return EarthRadiusInKm * c;
         }
 
         private static double ToRadians(double degrees)
